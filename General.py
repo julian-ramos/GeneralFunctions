@@ -32,7 +32,7 @@ def projectPaths(projectName):
             main_path='F:/Activity_RS/Dataset'
             data_path='F:/Activity_RS/Dataset'
             results_path='F:/Activity_RS/Results'
-            
+            print 'Moved to the data path '+data_path
             os.chdir(data_path);
         else :
             print 'working on Julian@laptop'
@@ -40,6 +40,7 @@ def projectPaths(projectName):
             main_path='F:Activity_RS/Dataset'
             data_path='F:Activity_RS/Dataset'
             results_path='F:Activity_RS/Results'
+            print 'Moved to the data path '+data_path
             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path}
             
