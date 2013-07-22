@@ -55,8 +55,8 @@ def projectPaths(projectName):
             os.chdir(data_path);
         else :
             print 'working on Julian@laptop'
-            main_path='E:\research_data_sets\neill\upmc'
-            data_path='E:\research_data_sets\neill\upmc\DeIDOutput\copd_pat_10'
+            main_path='E:/research_data_sets/neill/upmc'
+            data_path='E:/research_data_sets/neill/upmc/DeIDOutput/copd_pat_10'
             results_path='--not defined yet--'
             print 'Moved to the data path '+data_path
             os.chdir(data_path);
