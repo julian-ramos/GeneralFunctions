@@ -8,6 +8,7 @@ def projectPaths(projectName):
     projects. The paths change according to the machine this function
     is called from.
     '''
+    
     A=os.environ.get('COMPUTERNAME')
     if projectName == 'problematic_use':
         if A=='JULIAN':
@@ -25,6 +26,7 @@ def projectPaths(projectName):
             transitions_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/transitionsData'
             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'transitions_path':transitions_path}
+            
             
     if projectName == 'Activity_RS':
         if A=='JULIAN':
@@ -44,6 +46,7 @@ def projectPaths(projectName):
             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path}
     
+    
     if projectName == 'Discovering_APPC':
         if A=='JULIAN':
             print 'working on JULIAN@CMU'
@@ -62,6 +65,23 @@ def projectPaths(projectName):
             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path}
             
+            
+    if projectName == 'EigenRoutines':
+        if A=='JULIAN':
+            print 'working on JULIAN@CMU'
+            main_path='K:/research_data_sets/kettle/problematic_use_data/problematic_use_data'
+            data_path='K:/research_data_sets/kettle/problematic_use_data/problematic_use_data/ScreenOff-DataSet'
+            results_path='K:/research_data_sets/kettle/problematic_use_data/problematic_use_data/Results'
+            transitions_path='K:/research_data_sets/kettle/problematic_use_data/problematic_use_data/transitionsData'
+            os.chdir(data_path);
+        else :
+            print 'working on Julian@laptop'
+            main_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data'
+            data_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/SOFDataSet'
+            results_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/Results'
+            transitions_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/transitionsData'
+            os.chdir(data_path);
+        return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'transitions_path':transitions_path}
     
     
 def transitionsExtractor(data,timeData):
