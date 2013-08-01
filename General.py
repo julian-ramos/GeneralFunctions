@@ -1,3 +1,4 @@
+import time
 import numpy as np
 import os
 
@@ -96,6 +97,14 @@ def transitionsExtractor(data,timeData):
             timeOut.append(timeData[i])
             last=data[i]
     return {'dataOut':dataOut,'timeOut':timeOut}
+
+def tic(vars=0):
+    if vars==1:
+        t=time.time()-tic.start
+    else:
+        tic.start=time.time()
+        t=tic.start
+    return t 
         
     
     
