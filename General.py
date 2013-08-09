@@ -78,7 +78,7 @@ def projectPaths(projectName):
         else :
             print 'working on Julian@laptop'
             main_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data'
-            data_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/SOFDataSet'
+            data_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/ScreenOff-DataSet'
             results_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/Results'
             transitions_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/transitionsData'
             os.chdir(data_path);
