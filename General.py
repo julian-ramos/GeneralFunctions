@@ -84,22 +84,22 @@ def projectPaths(projectName):
             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'transitions_path':transitions_path}
     
-    if projectName == 'TopicModels':
+    if projectName == 'topicModels':
         if A=='JULIAN':
             print 'working on JULIAN@CMU'
             main_path='K:/research_folders/topicModels/'
             data_path='--not provided yet--'
             results_path='--not provided yet--'
             corpus_path='K:/research_folders/topicModels/corpus/'
-            os.chdir(data_path);
+#             os.chdir(data_path);
         else :
             print 'working on Julian@laptop'
             main_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data'
             data_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/ScreenOff-DataSet'
             results_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/Results'
             transitions_path='E:/research_data_sets/kettle/problematic_use_data/problematic_use_data/transitionsData'
-            os.chdir(data_path);
-        return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'transitions_path':transitions_path}
+#             os.chdir(data_path);
+        return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'corpus_path':corpus_path}
     
     
 def transitionsExtractor(data,timeData):
