@@ -89,7 +89,7 @@ def projectPaths(projectName):
             print 'working on JULIAN@CMU'
             main_path='K:/research_folders/topicModels/'
             data_path='--not provided yet--'
-            results_path='--not provided yet--'
+            results_path='K:/research_folders/topicModels/results/'
             corpus_path='K:/research_folders/topicModels/corpus/'
 #             os.chdir(data_path);
         else :
