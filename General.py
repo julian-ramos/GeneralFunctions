@@ -1,6 +1,7 @@
 import time
 import numpy as np
 import os
+import winsound
 
 
 def projectPaths(projectName):
@@ -115,7 +116,14 @@ def transitionsExtractor(data,timeData):
             last=data[i]
     return {'dataOut':dataOut,'timeOut':timeOut}
 
+## Miscellaneous functions
+
 def tic(vars=0):
+    '''
+    This function works similarly to tic in matlab. When called tic(0) internally stores the current time
+    when called as tic(1) returns the time elapsed between the last tic(0) and tic(1)
+    Calling tic(0) always overwrites the starting time
+    '''
     if vars==1:
         t=time.time()-tic.start
     else:
@@ -123,5 +131,12 @@ def tic(vars=0):
         t=tic.start
     return t 
         
+    
+    import winsound
+
+def beep():
+    Freq = 3000 # Set Frequency To 2500 Hertz
+    Dur = 1000 # Set Duration To 1000 ms == 1 second
+    winsound.Beep(Freq,Dur)
     
     
