@@ -4,6 +4,42 @@ import os
 import winsound
 
 
+def experimentVariables(projectName):
+    '''
+    This function returns all the variables necessary to start a experiment including:
+    name of the experiment
+    datasets locations
+    variables to report from the experiment
+    what to report from the experiment
+    '''
+    computerName=os.environ.get('COMPUTERNAME')
+    if projectName== 'unlabeledModelS':
+        if computerName=='JULIAN':
+            from sklearn.datasets import  load_boston, load_iris, load_diabetes, load_digits, load_linnerud
+            
+            datasets={'boston':load_boston(),'iris':load_iris(),'diabetes':load_diabetes(),'digits':load_digits(),'linnerud':load_linnerud()}
+            print('working at JULIAN@CMU')
+            dataset='digits'
+            numTests=20
+            experimentName='One'
+            agmntlvl=0
+            description='here the description of this experiment'
+            data=datasets[dataset]['data']
+            labels=datasets[dataset]['target']
+            verbose=0
+            
+            #The next are variables that store the outcomes from the
+            #experiment
+            variables=\
+            'spear=[]\n'
+
+            return {'dataset':dataset,'numTests':numTests,'experimentName':experimentName,\
+                    'description':description,'agmntlvl':agmntlvl,'variables':variables,'data':data,'labels':labels,'verbose':verbose}
+        else:
+            print('Variables not defined for Julian@Laptop')
+    
+
+
 def projectPaths(projectName):
     '''
     This function returns the paths necesary to work on several
@@ -101,6 +137,13 @@ def projectPaths(projectName):
 #             os.chdir(data_path);
         return {'main_path':main_path,'data_path':data_path,'results_path':results_path,'corpus_path':corpus_path}
     
+    if projectName== 'unlabelebeledModelS':
+        if A=='JULIAN':
+            print('working at JULIAN@CMU')
+            
+        else:
+            print('Variables not defined for Julian@Laptop') 
+    
     
 def transitionsExtractor(data,timeData):
     last=data[0]
@@ -116,7 +159,6 @@ def transitionsExtractor(data,timeData):
     return {'dataOut':dataOut,'timeOut':timeOut}
 
 ## Miscellaneous functions
-
 def tic(vars=0):
     '''
     This function works similarly to tic in matlab. When called tic(0) internally stores the current time
