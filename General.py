@@ -20,13 +20,16 @@ def experimentVariables(projectName):
             datasets={'boston':load_boston(),'iris':load_iris(),'diabetes':load_diabetes(),'digits':load_digits(),'linnerud':load_linnerud()}
             print('working at JULIAN@CMU')
             dataset='digits'
-            numTests=20
+            numTests=50
             experimentName='One'
             agmntlvl=0
             description='here the description of this experiment'
             data=datasets[dataset]['data']
             labels=datasets[dataset]['target']
             verbose=0
+            plots=False
+            signal2plot='f1_score_mv_predval_agmnt'
+#             signal2plot='f1_score_val_predval_agmnt'
             
             #The next are variables that store the outcomes from the
             #experiment
@@ -34,7 +37,8 @@ def experimentVariables(projectName):
             'spear=[]\n'
 
             return {'dataset':dataset,'numTests':numTests,'experimentName':experimentName,\
-                    'description':description,'agmntlvl':agmntlvl,'variables':variables,'data':data,'labels':labels,'verbose':verbose}
+                    'description':description,'agmntlvl':agmntlvl,'variables':variables,'data':data,\
+                    'labels':labels,'verbose':verbose,'plots':plots,'signal2plot':signal2plot}
         else:
             print('Variables not defined for Julian@Laptop')
     
